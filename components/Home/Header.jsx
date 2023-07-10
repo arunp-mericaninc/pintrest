@@ -1,5 +1,5 @@
 'use client'
-import { signIn, useSession} from "next-auth/react";
+import { signIn, signOut, useSession} from "next-auth/react";
 import Image from "next/image";
 import React from "react";
 import { HiSearch, HiBell, HiChat } from "react-icons/hi";
@@ -14,7 +14,7 @@ const Header = () => {
         alt="pintrest"
         width={50}
         height={50}
-        className="w-12 h-12 p-2 hover:bg-gray-300 hover:rounded-full"
+        className="w-12 h-12 p-2 hover:bg-gray-300 hover:rounded-full cursor-pointer"
       />
       <button className="bg-black text-white px-2 py-1.5 rounded-lg">
         Home
@@ -25,10 +25,16 @@ const Header = () => {
         <HiSearch className="text-[24px] " />
         <input type="text" className="p-1 outline-none bg-transparent" placeholder="Search" />
       </div>
-      <HiBell className="text-gray-500 text-3xl" />
-      <HiChat className="text-gray-500 text-3xl" />
+      <HiBell className="text-gray-500 text-[2.6rem] cursor-pointer" />
+      <HiChat className="text-gray-500 text-[2.6rem] cursor-pointer" />
+      {session==null?
       <button onClick={()=>signIn()} className="bg-blue-600 text-white px-2 py-1.5 rounded-lg" >Login</button>
-      <Image src="/images/profile.jpeg" alt="prof-img" width={50} height={50} className="w-12 h-8 bg-cover rounded-full"/>
+      :
+      <>
+      <button onClick={()=>signOut()} className="bg-red-600 text-white px-2 py-1.5 rounded-lg" >LogOut</button>
+      <Image src={session?.user.image} alt="prof-img" width={50} height={50} className="cursor-pointer w-12 h-8 bg-cover rounded-full"/>
+      </>
+      }
     </div>
   );
 };
