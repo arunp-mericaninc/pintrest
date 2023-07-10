@@ -1,12 +1,38 @@
 'use client'
 import { signIn, signOut, useSession} from "next-auth/react";
 import Image from "next/image";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 import { HiSearch, HiBell, HiChat } from "react-icons/hi";
+import { doc, setDoc } from "firebase/firestore"; 
+import app from "@/utils/firebase";
+import { getFirestore } from "firebase/firestore";
+
+
+
+
 
 const Header = () => {
+  const db = getFirestore(app);
   const{data:session}= useSession()
+  const router= useRouter()
+
   console.log("session",session);
+
+  // Add a new document in collection "cities
+  const setPost = async()=>{
+    await setDoc(doc(db, "data", session?.user?.email ), {
+      UserName: session?.user?.name,
+      email: session?.user?.email,
+      userImage: session?.user?.image,
+    });
+  }
+
+  useEffect(()=>{
+    setPost()
+  }, [session])
+
+
   return (
     <div className="flex items-center gap-6 p-2">
       <Image
@@ -32,7 +58,7 @@ const Header = () => {
       :
       <>
       <button onClick={()=>signOut()} className="bg-red-600 text-white px-2 py-1.5 rounded-lg" >LogOut</button>
-      <Image src={session?.user.image} alt="prof-img" width={50} height={50} className="cursor-pointer w-12 h-8 bg-cover rounded-full"/>
+      <Image onClick={()=>router.push("/"+session?.user?.email)} src={session?.user.image} alt="prof-img" width={50} height={50} className="cursor-pointer w-12 h-8 bg-cover rounded-full"/>
       </>
       }
     </div>
