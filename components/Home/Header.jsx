@@ -16,17 +16,17 @@ const Header = () => {
   console.log("session", session);
 
   // Add a new document in collection "cities
-  const setPost = async () => {
-    await setDoc(doc(db, "data", session?.user?.email), {
-      UserName: session?.user?.name,
-      email: session?.user?.email,
-      userImage: session?.user?.image,
-    });
-  };
+  // const setPost = async () => {
+  //   await setDoc(doc(db, "data", session?.user?.email), {
+  //     UserName: session?.user?.name,
+  //     email: session?.user?.email,
+  //     userImage: session?.user?.image,
+  //   });
+  // };
 
-  useEffect(() => {
-    setPost();
-  }, [session]);
+  // useEffect(() => {
+  //   setPost();
+  // }, [session]);
 
   return (
     <div className="flex items-center gap-6 p-2">
