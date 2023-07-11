@@ -16,7 +16,7 @@ const UserImage= ({user}) => {
        height={45}
        className='rounded-full'/>
        <div>
-        <h2 className='text-[14px] font-medium'>{user.name}</h2>
+        <h2 className='text-[14px] font-medium'>{user.userName}</h2>
         <h2 className='text-[12px]'>{user.email}</h2>
 
         </div>

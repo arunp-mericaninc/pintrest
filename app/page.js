@@ -25,8 +25,6 @@ querySnapshot.forEach((doc) => {
   }
   return (
     <div>
-      
-      <h1>Hello Team</h1>
       <Pin_img post={post}/>
     </div>
   )
