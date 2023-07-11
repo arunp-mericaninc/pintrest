@@ -42,7 +42,9 @@ const Header = () => {
         height={50}
         className="w-12 h-12 p-2 hover:bg-gray-300 hover:rounded-full cursor-pointer"
       />
-      <button className="bg-black text-white px-2 py-1.5 rounded-lg">
+      <button
+      onClick={()=>router.push("/")}
+       className="bg-black text-white px-2 py-1.5 rounded-lg">
         Home
       </button>
       <button className="bg-gray-300 rounded-lg px-2 py-1.5">Create</button>
