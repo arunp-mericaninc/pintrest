@@ -4,6 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import React, { useEffect } from 'react'
 import { doc, getDoc } from "firebase/firestore";
 import app from '@/utils/firebase';
+import UserInfo from '@/components/UserInfo';
 
 const Profile = () => {
     // const db = getFirestore(app);
@@ -32,8 +33,7 @@ const Profile = () => {
     // },[params])
   return (
     <div>
-      Profile
-      <h2>{session?.user?.name}</h2>
+      <UserInfo session={session}/>
     </div>
   )
 }
