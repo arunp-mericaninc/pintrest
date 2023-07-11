@@ -69,7 +69,7 @@ const UserInfo = () => {
         </div>
       </div>
       <div >
-        <Pin_img post={post}  />
+        <Pin_img post={post} session={session} />
       </div>
     </>
   );
