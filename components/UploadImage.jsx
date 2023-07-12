@@ -19,7 +19,7 @@ const UploadImage=({setFile})=> {
             </div>
             :null}
             {selectedFile?
-            <img src={(selectedFile)}
+            <img src={selectedFile}
             alt='selected-image'
             width={500}
             height={800}
