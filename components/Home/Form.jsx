@@ -5,7 +5,6 @@ import {getDownloadURL, getStorage, ref, uploadBytes} from "firebase/storage"
 import { doc, getFirestore, setDoc } from 'firebase/firestore'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import UploadImage from '../UploadImage'
 import UserTag from '../UserTag'
 import app from '@/utils/firebase'
 
