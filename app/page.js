@@ -17,9 +17,7 @@ export default function Home() {
   },[session])
   const getPost = async()=>{
     
-if(session==null){
-  router.push("/loginscreen")
-}
+
 const querySnapshot = await getDocs(collection(db, "pinterest"));
 querySnapshot.forEach((doc) => {
   let data = doc.data()
