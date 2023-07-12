@@ -72,7 +72,7 @@ const Form=()=>{
                 <span>Save</span>}</button>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
-            <input type='file' placeholder='choosefile'/>
+            <input type='file'  onChange={(e) => setFile(e.target.files[0])} placeholder='choosefile'/>
            
             {/* <UploadImage setFile={(file)=>setFile(file)} /> */}
           
