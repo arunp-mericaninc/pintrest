@@ -4,7 +4,7 @@ import { signIn, useSession } from 'next-auth/react'
 // import { useRouter } from 'next/navigation'
 import React from 'react'
 
-const page = () => {
+const Pins = () => {
   const{data:session}= useSession()
   // const router = useRouter()
   if(session == null){
@@ -17,4 +17,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Pins
