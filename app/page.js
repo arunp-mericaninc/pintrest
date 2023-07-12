@@ -14,7 +14,7 @@ export default function Home() {
   const [post, setPost] = useState([])
   useEffect(()=>{
     getPost()
-  },[])
+  },[session])
   const getPost = async()=>{
     
 if(session==null){
