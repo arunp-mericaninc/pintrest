@@ -9,7 +9,7 @@ const Pin_img = ({post,session}) => {
     }
     console.log(post);
   return (
-    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 m-4 gap' >
+    <div className='columns-1 md:columns-2 lg:columns-4 xl:columns-5 space-y-6 m-4 ' >
         {post.map((item)=>{
             return(
                 <div key={item.id} onClick={()=>handlePost(item.id)} className='flex flex-col items-center gap-1'>

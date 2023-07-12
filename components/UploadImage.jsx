@@ -4,6 +4,7 @@ import { HiArrowUpCircle } from "react-icons/hi2";
 const UploadImage=({setFile})=> {
    const [selectedFile,setSelectedFile]=useState();
 
+
   return (
     <div className='h-[450px] bg-[#e9e9e9]
     rounded-lg'>
@@ -19,7 +20,7 @@ const UploadImage=({setFile})=> {
             </div>
             :null}
             {selectedFile?
-            <img src={selectedFile}
+            <img src={window.URL.createObjectURL(selectedFile)}
             alt='selected-image'
             width={500}
             height={800}
