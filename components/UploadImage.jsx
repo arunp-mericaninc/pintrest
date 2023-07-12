@@ -23,7 +23,7 @@ const UploadImage = ({ setFile }) => {
         ) : null}
         {typeof window !== 'object' && selectedFile ? (
           <img
-            src={window.URL.createObjectURL(selectedFile)}
+            src={window?.URL?.createObjectURL(selectedFile)}
             alt="selected-image"
             width={500}
             height={800}
