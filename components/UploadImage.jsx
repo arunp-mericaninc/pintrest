@@ -21,9 +21,9 @@ const UploadImage = ({ setFile }) => {
             <h2 className="font-semibold">Click to Upload</h2>
           </div>
         ) : null}
-        {typeof window !== 'object' && selectedFile ? (
+        {typeof window !== 'undefined' && selectedFile ? (
           <img
-            src={window?.URL?.createObjectURL(selectedFile)}
+            src={window.URL.createObjectURL(selectedFile)}
             alt="selected-image"
             width={500}
             height={800}
