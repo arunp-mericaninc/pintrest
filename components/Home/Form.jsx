@@ -73,8 +73,9 @@ const Form=()=>{
                 <span>Save</span>}</button>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
+            <input type='file' placeholder='choosefile'/>
            
-            <UploadImage setFile={(file)=>setFile(file)} />
+            {/* <UploadImage setFile={(file)=>setFile(file)} /> */}
           
        <div className="col-span-2">
        <div className='w-[100%]'>
