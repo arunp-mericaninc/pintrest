@@ -1,7 +1,7 @@
 import LoginScreen from '@/components/Home/LoginScreen'
 import React from 'react'
 
-const page = () => {
+const LoginPage = () => {
   return (
     <div>
       <LoginScreen/>
@@ -9,4 +9,4 @@ const page = () => {
   )
 }
 
-export default page
+export default LoginPage
