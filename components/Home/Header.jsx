@@ -77,7 +77,7 @@ const Header = () => {
           </button>
           <Image
             onClick={() => router.push("/" + session?.user?.email)}
-            src={session?.user.image}
+            src={session?.user?.image}
             alt="prof-img"
             width={50}
             height={50}
