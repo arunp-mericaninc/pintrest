@@ -4,6 +4,11 @@ import { HiArrowUpCircle } from "react-icons/hi2";
 const UploadImage=({setFile})=> {
    const [selectedFile,setSelectedFile]=useState();
 
+   if (typeof window === "object") {
+    //This code is executed in the browser
+     console.log(window.innerWidth)
+ }
+
 
   return (
     <div className='h-[450px] bg-[#e9e9e9]
