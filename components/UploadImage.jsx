@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HiArrowUpCircle } from 'react-icons/hi2';
 
 const UploadImage = ({ setFile }) => {
@@ -8,6 +8,13 @@ const UploadImage = ({ setFile }) => {
     setFile(e.target.files[0]);
     setSelectedFile(e.target.files[0]);
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && selectedFile) {
+      const objectURL = window.URL.createObjectURL(selectedFile);
+      return () => window.URL.revokeObjectURL(objectURL);
+    }
+  }, [selectedFile]);
 
   return (
     <div className="h-[450px] bg-[#e9e9e9] rounded-lg">
@@ -21,7 +28,7 @@ const UploadImage = ({ setFile }) => {
             <h2 className="font-semibold">Click to Upload</h2>
           </div>
         ) : null}
-        {typeof window !== 'undefined' && selectedFile ? (
+        {selectedFile ? (
           <img
             src={window.URL.createObjectURL(selectedFile)}
             alt="selected-image"
